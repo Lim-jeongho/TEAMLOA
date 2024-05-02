@@ -1,0 +1,54 @@
+.armory-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.armory-card {
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.card-info {
+    margin-top: 10px;
+}
+
+.card-info h3 {
+    margin: 0;
+}
+
+.card-info p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #666;
+}   /* 카드 부분 디자인 */
+
+.armory-gem-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.armory-gem-table th, .armory-gem-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.armory-gem-table th {
+    background-color: #f2f2f2;
+}
+
+.armory-gem-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.armory-gem-table tr:hover {
+    background-color: #ddd;
+}   /* 보석 부분 디자인 */
+
+.skill-info {
+    color: black !important;
+}
