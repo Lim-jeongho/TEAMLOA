@@ -117,7 +117,7 @@ function displayEquipmentInfo(equipmentData) {
             <td>${equipment.Type}</td>
             <td>${equipment.Name}</td>
             <td>${equipment.Grade}</td>
-            <td><img src="${equipment.Icon}" alt="${equipment.Name}" width="50"></td>
+            <td><img src="${equipment.Icon}" alt="${equipment.Name}" width="45"></td>
         `;
         equipmentTable.appendChild(row);
     });
