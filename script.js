@@ -12,7 +12,7 @@ searchForm.addEventListener('submit', async (event) => {
     try {
         const response = await fetch(`https://developer-lostark.game.onstove.com/characters/${encodeURIComponent(characterNameInput)}/siblings`, {
             headers: {
-                'Authorization': 'bearer ' // 여기에 실제 사용할 API 키를 작성
+                'Authorization': 'bearer ' // 여기에 실제 사용할 API 키를 입력
             }
         });
 
