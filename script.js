@@ -151,7 +151,7 @@ function displaySkillsInfo(skillsData) {
         skillsTable.appendChild(row);
 
         // 스킬 각인 요소의 텍스트 색상을 검정색으로 변경(해결안됨)
-        const skillInfoCell = row.querySelector('td:last-child');
+        const skillInfoCell = row.querySelector('td:first-child()');
         skillInfoCell.style.color = 'black';
     });
 
