@@ -151,8 +151,18 @@ function displaySkillsInfo(skillsData) {
         skillsTable.appendChild(row);
 
         // 스킬 각인 요소의 텍스트 색상을 검정색으로 변경(해결안됨)
-        const skillInfoCell = row.querySelector('td:first-child(0)');
-        skillInfoCell.style.color = 'black';
+        // const skillInfoCell = row.querySelector('td:first-child');
+        // skillInfoCell.style.color = 'black';
+        const skillInfoCell = row.querySelector('td:first-child');
+        if (skillInfoCell) {
+            skillInfoCell.style.color = 'black';
+        } else {
+            console.error('Could not find the first <td> element in the row.');
+        }
+
+        document.body.style.color = 'black';    // 전체 문서의 텍스트 색상을 검정색으로 변경
+
+        
     });
 
     characterInfo.appendChild(skillsTable);
