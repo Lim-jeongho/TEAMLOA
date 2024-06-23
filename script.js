@@ -150,17 +150,27 @@ function displaySkillsInfo(skillsData) {
         `;
         skillsTable.appendChild(row);
 
-        // 스킬 각인 요소의 텍스트 색상을 검정색으로 변경(해결안됨)
-        const skillInfoCell = row.querySelector('td:last-child');
-        skillInfoCell.style.color = 'black';
-        const skillInfoCell = row.querySelector('td:first-child');
-        if (skillInfoCell) {
-            skillInfoCell.style.color = 'black';
+    document.addEventListener('DOMContentLoaded', function() {
+    const rows = document.querySelectorAll('tr'); // 예시로 'tr' 선택자 사용
+
+    rows.forEach(row => {
+        const lastCell = row.querySelector('td:last-child');
+        if (lastCell) {
+            lastCell.style.color = 'black';
+        } else {
+            console.error('Could not find the last <td> element in the row.');
+        }
+
+        const firstCell = row.querySelector('td:first-child');
+        if (firstCell) {
+            firstCell.style.color = 'black';
         } else {
             console.error('Could not find the first <td> element in the row.');
         }
-        document.body.style.color = 'black';    // 전체 문서의 텍스트 색상을 검정색으로 변경  
     });
+    // 전체 문서의 텍스트 색상을 검정색으로 변경
+    document.body.style.color = 'black';
+});
 
     characterInfo.appendChild(skillsTable);
 }
