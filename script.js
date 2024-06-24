@@ -154,18 +154,13 @@ function displaySkillsInfo(skillsData) {
     const rows = document.querySelectorAll('tr'); // 예시로 'tr' 선택자 사용
 
     rows.forEach(row => {
-        const lastCell = row.querySelector('td:last-child');
-        if (lastCell) {
-            lastCell.style.color = 'black';
-        } else {
-            console.error('Could not find the last <td> element in the row.');
-        }
+        const cells = row.querySelectorAll('td');
 
-        const firstCell = row.querySelector('td:first-child');
-        if (firstCell) {
-            firstCell.style.color = 'black';
+        if(cells.length > 0) {
+            cells[0].style.color = 'black';
+            cells[cells.length - 1].style.color = 'black'
         } else {
-            console.error('Could not find the first <td> element in the row.');
+            console.error('Could not find any <td> elements in the row.');
         }
     });
     // 전체 문서의 텍스트 색상을 검정색으로 변경
