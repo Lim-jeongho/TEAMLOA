@@ -151,7 +151,7 @@ function displaySkillsInfo(skillsData) {
         skillsTable.appendChild(row);
 
     document.addEventListener('DOMContentLoaded', function() {
-    const rows = document.querySelectorAll('tr'); // 예시로 'tr' 선택자 사용
+    const rows = document.querySelectorAll('tr');
 
     rows.forEach(row => {
         const cells = row.querySelectorAll('td');
