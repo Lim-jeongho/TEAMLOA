@@ -2,12 +2,56 @@ const searchForm = document.getElementById('searchForm');
 const characterInfo = document.getElementById('characterInfo');
 const characterImageContainer = document.getElementById('characterImageContainer');
 
-
 searchForm.addEventListener('submit', async (event) => {
     event.preventDefault();
 
     const characterNameInput = document.getElementById('characterNameInput').value;
     const apiKey = ''
+
+    /*  
+    try {
+        const [characterData, armoryData] = await Promise.all([
+            fetchCharacterData(characterNameInput),
+            fetchArmoryData(characterNameInput)
+        ]);
+
+        displayCharacterInfo(characterData, characterNameInput);
+        if (armoryData.ArmoryProfile && armoryData.ArmoryProfile.CharacterImage) {
+            displayCharacterImage(armoryData.ArmoryProfile.CharacterImage);
+        }
+        // ... 기타 데이터 표시 관련 코드들 ...
+
+    } catch (error) {
+        console.error('Error fetching data:', error); // 실제 에러 객체를 로깅
+        characterInfo.innerHTML = `<p>Failed to fetch data. Please try again later.</p>`;
+        // 사용자에게 더 구체적인 메시지를 표시하거나, UI 요소를 사용하여 표시 방식을 개선할 수 있음
+    }
+});
+
+async function fetchCharacterData(characterNameInput) {
+    const response = await fetch(`https://developer-lostark.game.onstove.com/characters/${encodeURIComponent(characterNameInput)}/siblings`, {
+        headers: {
+            'Authorization': `bearer ${apiKey}`
+        }
+    });
+    if (!response.ok) {
+        throw new Error('Failed to fetch character info. Please check your network connection and try again.');
+    }
+    return response.json();
+}
+
+async function fetchArmoryData(characterNameInput) {
+    const response = await fetch(`https://developer-lostark.game.onstove.com/armories/characters/${encodeURIComponent(characterNameInput)}`, {
+        headers: {
+            'Authorization': `bearer ${apiKey}`
+        }
+    });
+    if (!response.ok) {
+        throw new Error('Failed to fetch armory info. Please try again later.');
+    }
+    return response.json();
+}
+    */
 
     try {
         const response = await fetch(`https://developer-lostark.game.onstove.com/characters/${encodeURIComponent(characterNameInput)}/siblings`, {
