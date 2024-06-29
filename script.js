@@ -113,6 +113,39 @@ async function fetchArmoryData(characterNameInput) {
         console.error('Error fetching character info:', error.message);
         characterInfo.textContent = 'Failed to fetch character info. Please try again later.';
     }
+    /*
+        try {
+    const response = await fetch(`https://developer-lostark.game.onstove.com/characters/${encodeURIComponent(characterNameInput)}/siblings`, {
+        headers: {
+            'Authorization': `bearer ${apiKey}`
+        }
+    });
+
+    if (!response.ok) {
+        // HTTP 상태 코드에 따라 다른 처리 가능
+        if (response.status === 401) {
+            throw new Error('인증에 실패했습니다. API 키가 올바른지 확인하세요.');
+        } else if (response.status === 404) {
+            throw new Error('캐릭터 정보를 찾을 수 없습니다.');
+        } else {
+            throw new Error('서버에서 데이터를 가져오지 못했습니다.');
+        }
+    }
+
+    const characterData = await response.json();
+    // 데이터 표시 등
+
+} catch (error) {
+    console.error('Error fetching character info:', error.message);
+
+    // 구체적인 오류 메시지 표시
+    if (error instanceof TypeError && error.message.includes('failed to fetch')) {
+        characterInfo.textContent = '네트워크 연결이 끊어졌습니다. 인터넷 연결을 확인하고 다시 시도하세요.';
+    } else {
+        characterInfo.textContent = '서버에서 데이터를 가져오는 중 오류가 발생했습니다. 잠시 후 다시 시도하세요.';
+    }
+}        네트워크 오류 및 예외 처리 강화
+    */
 });
 
 function displayCharacterInfo(characterData, searchedCharacterName) {
