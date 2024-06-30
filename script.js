@@ -201,7 +201,59 @@ function displayEquipmentInfo(equipmentData) {
 
     characterInfo.appendChild(equipmentTable);
 }
+/*  displaySkillsInfo 함수 내부에 잘못된 위치에 이벤트 리스너가 등록된 부분 수정하기
+function displaySkillsInfo(skillsData) {
+    const skillsTable = document.createElement('table');
+    const tableHeader = `
+        <tr>
+            <th>이름</th>
+            <th>아이콘</th>
+            <th>레벨</th>
+            <th>타입</th>
+            <th>각인</th>
+        </tr>
+    `;
+    skillsTable.innerHTML = tableHeader;
 
+    skillsData.forEach(skill => {
+        const row = document.createElement('tr');
+        const tripods = skill.Tripods.map(tripod => `<li>${tripod.Name}: ${tripod.Tooltip}</li>`).join('');
+        row.innerHTML = `
+            <td>${skill.Name}</td>
+            <td><img src="${skill.Icon}" alt="${skill.Name}" width="50"></td>
+            <td>${skill.Level}</td>
+            <td>${skill.Type}</td>
+            <td>${tripods}</td>
+        `;
+        skillsTable.appendChild(row);
+    });
+
+    characterInfo.appendChild(skillsTable);
+
+    // 이벤트 리스너를 함수 외부로 이동
+    initializeTableStyles();
+}
+
+// 함수 외부에 이벤트 리스너 정의
+function initializeTableStyles() {
+    document.addEventListener('DOMContentLoaded', function() {
+        const rows = document.querySelectorAll('tr');
+
+        rows.forEach(row => {
+            const cells = row.querySelectorAll('td');
+
+            if (cells.length > 0) {
+                cells[0].style.color = 'black';
+                cells[cells.length - 1].style.color = 'black'
+            } else {
+                console.error('Could not find any <td> elements in the row.');
+            }
+        });
+        // 전체 문서의 텍스트 색상을 검정색으로 변경
+        document.body.style.color = 'black';
+    });
+}
+*/
 function displaySkillsInfo(skillsData) {
     const skillsTable = document.createElement('table');
     const tableHeader = `
