@@ -19,7 +19,7 @@ searchForm.addEventListener('submit', async (event) => {
         if (armoryData.ArmoryProfile && armoryData.ArmoryProfile.CharacterImage) {
             displayCharacterImage(armoryData.ArmoryProfile.CharacterImage);
         }
-        // ... 기타 데이터 표시 관련 코드들 ...
+        //  기타 데이터 표시 관련 코드들
 
     } catch (error) {
         console.error('Error fetching data:', error); // 실제 에러 객체를 로깅
