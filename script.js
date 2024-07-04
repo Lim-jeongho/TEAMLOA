@@ -6,7 +6,7 @@ searchForm.addEventListener('submit', async (event) => {
     event.preventDefault();
 
     const characterNameInput = document.getElementById('characterNameInput').value;
-    const apiKey = ''
+    const apiKey = '여기에 실제 API키 입력'
 
     /*  
     try {
@@ -71,7 +71,7 @@ async function fetchArmoryData(characterNameInput) {
       
         const armoryResponse = await fetch(`https://developer-lostark.game.onstove.com/armories/characters/${encodeURIComponent(characterNameInput)}`, {
             headers: {
-                'Authorization': `bearer `
+                'Authorization': `bearer ${apikey}`
             }
         });
 
