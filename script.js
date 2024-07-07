@@ -67,20 +67,6 @@ async function fetchArmoryData(characterNameInput) {
 
         const characterData = await response.json();
         console.log(characterData);   
-        /*  
-        const characterResponse = await fetch(`https://developer-lostark.game.onstove.com/characters/${encodeURIComponent(characterNameInput)}/siblings`, {
-            headers: {
-                'Authorization': `bearer ${apiKey}`
-            }
-        });
-
-        if (!characterResponse.ok) {
-            throw new Error('캐릭터 정보를 가져오는데 실패했습니다. 나중에 다시 시도해주세요.');
-        }
-
-        const characterData = await characterResponse.json();
-        // 캐릭터 이미지가 가장 위에 위치하도록 설정
-        */
                
         displayCharacterInfo(characterData, characterNameInput); // 캐릭터 정보 화면에 표시
       
