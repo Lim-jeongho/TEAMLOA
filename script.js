@@ -70,7 +70,7 @@ async function fetchArmoryData(characterNameInput) {
                
         displayCharacterInfo(characterData, characterNameInput); // 캐릭터 정보 화면에 표시
       
-        const armoryResponse = await fetch(`https://developer-lostark.game.onstove.com/armories/characters/${encodeURIComponent(characterNameInput)}`, {
+        const armoryResponse = await fetch(`https://developer-lostark.game.onstove.com/armories/characters/${encodeURIComponent(characterNameInput)}`, {  // api응답 요청 주소 입력
             headers: {
                 'Authorization': `bearer ${apikey}`
             }
