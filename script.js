@@ -279,25 +279,28 @@ function displaySkillsInfo(skillsData) {
             <td>${tripods}</td>
         `;
         skillsTable.appendChild(row);
-
-    document.addEventListener('DOMContentLoaded', function() {
-    const rows = document.querySelectorAll('tr');
-
-    rows.forEach(row => {
-        const cells = row.querySelectorAll('td');
-
-        if(cells.length > 0) {
-            cells[0].style.color = 'black';
-            cells[cells.length - 1].style.color = 'black'
-        } else {
-            console.error('Could not find any <td> elements in the row.');
-        }
     });
-    // 전체 문서의 텍스트 색상을 검정색으로 변경
-    document.body.style.color = 'black';
-});
 
     characterInfo.appendChild(skillsTable);
+
+    // 테이블 생성 후에 텍스트 색상 변경을 적용하는 이벤트 리스너
+    document.addEventListener('DOMContentLoaded', function() {
+        const rows = document.querySelectorAll('tr');
+
+        rows.forEach(row => {
+            const cells = row.querySelectorAll('td');
+
+            if(cells.length > 0) {
+                cells[0].style.color = 'black'; // 각 행의 첫 번째 셀 텍스트 색상을 검은색으로 설정
+                cells[cells.length - 1].style.color = 'black'; // 각 행의 마지막 셀 텍스트 색상을 검은색으로 설정
+            } else {
+                console.error('행 안에 <td> 요소를 찾을 수 없습니다.');
+            }
+        });
+
+        // 문서 전체의 텍스트 색상을 검은색으로 설정
+        document.body.style.color = 'black';
+    });
 }
 
 function displayArmoryCardInfo(cardsData) {
