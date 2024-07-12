@@ -174,7 +174,7 @@ function displayCharacterImage(imageUrl) {
     characterImage.src = imageUrl;
 
     characterImageContainer.innerHTML = '';
-    characterImageContainer.appendChild(characterImage);
+    characterImageContainer.appendChild(characterImage);  // 캐릭터 이미지가 가장 하단에 표시됨(수정해야 할 것)
 }
 
 function displayEquipmentInfo(equipmentData) {
