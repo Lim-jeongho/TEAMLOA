@@ -234,26 +234,6 @@ function displaySkillsInfo(skillsData) {
     // 이벤트 리스너를 함수 외부로 이동
     initializeTableStyles();
 }
-
-// 함수 외부에 이벤트 리스너 정의
-function initializeTableStyles() {
-    document.addEventListener('DOMContentLoaded', function() {
-        const rows = document.querySelectorAll('tr');
-
-        rows.forEach(row => {
-            const cells = row.querySelectorAll('td');
-
-            if (cells.length > 0) {
-                cells[0].style.color = 'black';
-                cells[cells.length - 1].style.color = 'black'
-            } else {
-                console.error('Could not find any <td> elements in the row.');
-            }
-        });
-        // 전체 문서의 텍스트 색상을 검정색으로 변경
-        document.body.style.color = 'black';
-    });
-}
 */
 function displaySkillsInfo(skillsData) {
     const skillsTable = document.createElement('table');
