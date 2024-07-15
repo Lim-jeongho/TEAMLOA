@@ -72,7 +72,7 @@ async function fetchArmoryData(characterNameInput) {
       
         const armoryResponse = await fetch(`https://developer-lostark.game.onstove.com/armories/characters/${encodeURIComponent(characterNameInput)}`, {  // api응답 요청 주소 입력
             headers: {
-                'Authorization': `bearer ${apikey}`
+                'Authorization': `bearer ${apikey}` // 여기에 실제 사용할 API 키를 입력
             }
         });
 
