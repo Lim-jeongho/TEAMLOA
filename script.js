@@ -174,11 +174,12 @@ function displayCharacterImage(imageUrl) {
     characterImage.src = imageUrl;
 
     characterImageContainer.innerHTML = '';
-    characterImageContainer.appendChild(characterImage);  // 캐릭터 이미지가 가장 하단에 표시됨(수정해야 할 것)
+    characterImageContainer.appendChild(characterImage);  // 순서상 캐릭터 이미지가 위쪽에 배치되어야 하는데 가장 하단에 표시됨(수정해야 할 것)
 }
 
 function displayEquipmentInfo(equipmentData) {
     const equipmentTable = document.createElement('table');
+    
     const tableHeader = `
         <tr>
             <th>종류</th>
