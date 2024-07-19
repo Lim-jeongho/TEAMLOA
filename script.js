@@ -24,6 +24,7 @@ searchForm.addEventListener('submit', async (event) => {
     } catch (error) {
         console.error('Error fetching data:', error); // 실제 에러 객체를 로깅
         characterInfo.innerHTML = `<p>Failed to fetch data. Please try again later.</p>`;
+        handleFetchError(error, '데이터를 가져오지 못했습니다. 나중에 다시 시도해주세요.');
         // 사용자에게 더 구체적인 메시지를 표시하거나, UI 요소를 사용하여 표시 방식을 개선할 수 있음
     }
 });
