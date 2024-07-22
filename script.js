@@ -28,30 +28,6 @@ searchForm.addEventListener('submit', async (event) => {
         // 사용자에게 더 구체적인 메시지를 표시하거나, UI 요소를 사용하여 표시 방식을 개선할 수 있음
     }
 });
-
-async function fetchCharacterData(characterNameInput) {
-    const response = await fetch(`https://developer-lostark.game.onstove.com/characters/${encodeURIComponent(characterNameInput)}/siblings`, {
-        headers: {
-            'Authorization': `bearer ${apiKey}`
-        }
-    });
-    if (!response.ok) {
-        throw new Error('Failed to fetch character info. Please check your network connection and try again.');
-    }
-    return response.json();
-}
-
-async function fetchArmoryData(characterNameInput) {
-    const response = await fetch(`https://developer-lostark.game.onstove.com/armories/characters/${encodeURIComponent(characterNameInput)}`, {
-        headers: {
-            'Authorization': `bearer ${apiKey}`
-        }
-    });
-    if (!response.ok) {
-        throw new Error('Failed to fetch armory info. Please try again later.');
-    }
-    return response.json();
-}
     */
 
     try {
