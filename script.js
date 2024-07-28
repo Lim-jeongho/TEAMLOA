@@ -180,39 +180,7 @@ function displayEquipmentInfo(equipmentData) {
 
     characterInfo.appendChild(equipmentTable);
 }
-/*  displaySkillsInfo 함수 내부에 잘못된 위치에 이벤트 리스너가 등록된 부분 수정하기
-function displaySkillsInfo(skillsData) {
-    const skillsTable = document.createElement('table');
-    const tableHeader = `
-        <tr>
-            <th>이름</th>
-            <th>아이콘</th>
-            <th>레벨</th>
-            <th>타입</th>
-            <th>각인</th>
-        </tr>
-    `;
-    skillsTable.innerHTML = tableHeader;
 
-    skillsData.forEach(skill => {
-        const row = document.createElement('tr');
-        const tripods = skill.Tripods.map(tripod => `<li>${tripod.Name}: ${tripod.Tooltip}</li>`).join('');
-        row.innerHTML = `
-            <td>${skill.Name}</td>
-            <td><img src="${skill.Icon}" alt="${skill.Name}" width="50"></td>
-            <td>${skill.Level}</td>
-            <td>${skill.Type}</td>
-            <td>${tripods}</td>
-        `;
-        skillsTable.appendChild(row);
-    });
-
-    characterInfo.appendChild(skillsTable);
-
-    // 이벤트 리스너를 함수 외부로 이동
-    initializeTableStyles();
-}
-*/
 function displaySkillsInfo(skillsData) {
     const skillsTable = document.createElement('table');
     const tableHeader = `
