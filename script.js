@@ -8,28 +8,6 @@ searchForm.addEventListener('submit', async (event) => {
     const characterNameInput = document.getElementById('characterNameInput').value;
     const apiKey = '여기에 실제 API키 입력'
 
-    /*  
-    try {
-        const [characterData, armoryData] = await Promise.all([
-            fetchCharacterData(characterNameInput),
-            fetchArmoryData(characterNameInput)
-        ]);
-
-        displayCharacterInfo(characterData, characterNameInput);
-        if (armoryData.ArmoryProfile && armoryData.ArmoryProfile.CharacterImage) {
-            displayCharacterImage(armoryData.ArmoryProfile.CharacterImage);
-        }
-        //  기타 데이터 표시 관련 코드들 추가로 작성해야 함
-
-    } catch (error) {
-        console.error('Error fetching data:', error); // 실제 에러 객체를 로깅
-        characterInfo.innerHTML = `<p>Failed to fetch data. Please try again later.</p>`;
-        handleFetchError(error, '데이터를 가져오지 못했습니다. 나중에 다시 시도해주세요.');
-        // 사용자에게 더 구체적인 메시지를 표시하거나, UI 요소를 사용하여 표시 방식을 개선할 수 있음
-    }
-});
-    */
-
     try {
         
         const response = await fetch(`https://developer-lostark.game.onstove.com/characters/${encodeURIComponent(characterNameInput)}/siblings`, {
