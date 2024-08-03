@@ -187,7 +187,6 @@ function displaySkillsInfo(skillsData) {
 
     characterInfo.appendChild(skillsTable);
 
-    // 테이블 생성 후에 텍스트 색상 변경을 적용하는 이벤트 리스너
     document.addEventListener('DOMContentLoaded', function() {
         const rows = document.querySelectorAll('tr');
 
@@ -201,9 +200,7 @@ function displaySkillsInfo(skillsData) {
                 console.error('행 안에 <td> 요소를 찾을 수 없습니다.');
             }
         });
-
-        // 문서 전체의 텍스트 색상을 검은색으로 설정
-        document.body.style.color = 'black';
+        document.body.style.color = 'black';    // 문서 전체의 텍스트 색상을 검은색으로 설정, 결과 확인해야 할 것.
     });
 }
 
