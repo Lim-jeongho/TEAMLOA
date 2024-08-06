@@ -1,4 +1,5 @@
-const searchForm = document.getElementById('searchForm');
+/
+    const searchForm = document.getElementById('searchForm');
 const characterInfo = document.getElementById('characterInfo');
 const characterImageContainer = document.getElementById('characterImageContainer');
 
@@ -13,7 +14,7 @@ searchForm.addEventListener('submit', async (event) => {
         const response = await fetch(`https://developer-lostark.game.onstove.com/characters/${encodeURIComponent(characterNameInput)}/siblings`, {
             headers: {
                 'Authorization': `bearer ${apikey}` // 여기에 실제 사용할 API 키를 입력
-            }
+            ㄹ
         });
 
         if (!response.ok) {
@@ -257,7 +258,7 @@ function displayArmoryGemInfo(armoryGemData) {
     characterInfo.appendChild(armoryGemHeader);
 
     const armoryGemTable = document.createElement('table');
-    armoryGemTable.classList.add('armory-gem-table'); // 클래스 추가
+    armoryGemTable.classList.add('armory-gem-table');
 
     for (let i = 0; i < armoryGemData.length; i += 2) {
         const row = armoryGemTable.insertRow();
