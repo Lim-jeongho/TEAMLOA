@@ -28,7 +28,7 @@ searchForm.addEventListener('submit', async (event) => {
       
         const armoryResponse = await fetch(`https://developer-lostark.game.onstove.com/armories/characters/${encodeURIComponent(characterNameInput)}`, {  // api응답 요청 주소 입력
             headers: {
-                'Authorization': `bearer ${apikey}` // 여기에 실제 사용할 API 키를 입력
+                'Authorization': `bearer ${apikey}` 
             }
         });
 
@@ -109,7 +109,7 @@ function displayCharacterInfo(characterData, searchedCharacterName) {
     
     characterInfo.innerHTML = '';   // 검색한 캐릭터 정보를 표시하는 코드
 
-    const searchedCharacter = characterData.find(character => character.CharacterName === searchedCharacterName);   // 검색한 캐릭터 정보만 필터링하여 표시
+    const searchedCharacter = characterData.find(character => character.CharacterName === searchedCharacterName);   // 검색한 캐릭터 정보만 필터링하여 표시 (시즌3 업데이트 이후 접속안한 캐릭터 검색 안 됨.)
     if (searchedCharacter) {
         const characterElement = document.createElement('div');
         characterElement.innerHTML = `
