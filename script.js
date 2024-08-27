@@ -194,8 +194,8 @@ function displaySkillsInfo(skillsData) {
             const cells = row.querySelectorAll('td');
 
             if(cells.length > 0) {
-                cells[0].style.color = 'black'; // 각 행의 첫 번째 셀 텍스트 색상을 검은색으로 설정
-                cells[cells.length - 1].style.color = 'black'; // 각 행의 마지막 셀 텍스트 색상을 검은색으로 설정
+                cells[0].style.color = 'black'; 
+                cells[cells.length - 1].style.color = 'black'; 
             } else {
                 console.error('행 안에 <td> 요소를 찾을 수 없습니다.');
             }
