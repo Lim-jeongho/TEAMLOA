@@ -200,7 +200,7 @@ function displaySkillsInfo(skillsData) {
                 console.error('행 안에 <td> 요소를 찾을 수 없습니다.');
             }
         });
-        document.body.style.color = 'black';    // 문서 전체의 텍스트 색상을 검은색으로 설정, 결과 확인해야 할 것.
+        document.body.style.color = 'black';    // 문서 전체의 텍스트 색상을 검은색으로 설정
     });
 }
 
