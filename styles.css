@@ -48,7 +48,3 @@
 .armory-gem-table tr:hover {
     background-color: #ddd;
 }   /* 보석 부분 디자인 */
-
-.skill-info {
-    color: black !important;
-}
