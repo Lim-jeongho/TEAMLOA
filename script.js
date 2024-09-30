@@ -61,9 +61,7 @@ searchForm.addEventListener('submit', async (event) => {
             displayArmoryGemInfo(armoryData.ArmoryGem.Gems);
         }   else {
             console.log('No ArmoryGem data found.');
-        }   // 보석 정보 표시
-
-        
+        }   // 보석 정보 표시        
 
     } catch (error) {
         console.error('Error fetching character info:', error.message);
@@ -144,7 +142,6 @@ function displayEquipmentInfo(equipmentData) {
         </tr>
     `;
     equipmentTable.innerHTML = tableHeader;
-
     equipmentData.forEach(equipment => {
         const row = document.createElement('tr');
         row.innerHTML = `
@@ -155,7 +152,6 @@ function displayEquipmentInfo(equipmentData) {
         `;
         equipmentTable.appendChild(row);
     });
-
     characterInfo.appendChild(equipmentTable);
 }
 
@@ -186,13 +182,10 @@ function displaySkillsInfo(skillsData) {
     });
 
     characterInfo.appendChild(skillsTable);
-
     document.addEventListener('DOMContentLoaded', function() {
         const rows = document.querySelectorAll('tr');
-
         rows.forEach(row => {
             const cells = row.querySelectorAll('td');
-
             if(cells.length > 0) {
                 cells[0].style.color = 'black'; 
                 cells[cells.length - 1].style.color = 'black'; 
@@ -211,10 +204,8 @@ function displayArmoryCardInfo(cardsData) {
 
     const armoryCardContainer = document.createElement('div');
     armoryCardContainer.classList.add('armory-card-container');
-
     let rowCount = 0;
     let currentRow;
-
     cardsData.forEach((card, index) => {
         if (index % 2 === 0) {
             currentRow = document.createElement('div');
@@ -241,13 +232,10 @@ function displayArmoryCardInfo(cardsData) {
 
         cardInfo.appendChild(cardName);
         cardInfo.appendChild(cardGrade);
-
         cardElement.appendChild(cardImage);
         cardElement.appendChild(cardInfo);
-
         currentRow.appendChild(cardElement);
     });
-
     characterInfo.appendChild(armoryCardContainer);
 }
 
