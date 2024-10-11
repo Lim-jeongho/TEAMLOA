@@ -40,29 +40,23 @@ searchForm.addEventListener('submit', async (event) => {
         if (armoryData.ArmoryProfile && armoryData.ArmoryProfile.CharacterImage) {
             displayCharacterImage(armoryData.ArmoryProfile.CharacterImage);
         }   // 캐릭터 이미지 표시
-
         if (armoryData.Collectibles && armoryData.Collectibles.length > 0) {
             displayCollectibles(armoryData.Collectibles);
         }   // 수집품 정보 표시
-
         if (armoryData.ArmoryCard && armoryData.ArmoryCard.Cards.length > 0) {
             displayArmoryCardInfo(armoryData.ArmoryCard.Cards);
         }   // 카드 정보 표시
-
         if (armoryData.ArmoryEquipment && armoryData.ArmoryEquipment.length > 0) {
             displayEquipmentInfo(armoryData.ArmoryEquipment);
         }    // 장비 정보 표시
-
         if (armoryData.ArmorySkills && armoryData.ArmorySkills.length > 0) {
             displaySkillsInfo(armoryData.ArmorySkills);
         }   // 스킬 정보 표시
-        
         if (armoryData.ArmoryGem && armoryData.ArmoryGem.Gems.length > 0) {
-            displayArmoryGemInfo(armoryData.ArmoryGem.Gems);
+            displayArmoryGemInfo(armoryData.ArmoryGem.Gems);   // 보석 정보 표시
         }   else {
             console.log('No ArmoryGem data found.');
-        }   // 보석 정보 표시        
-
+        }
     } catch (error) {
         console.error('Error fetching character info:', error.message);
         characterInfo.textContent = 'Failed to fetch character info. Please try again later.';
@@ -95,11 +89,9 @@ searchForm.addEventListener('submit', async (event) => {
     if (error instanceof TypeError && error.message.includes('failed to fetch')) {
         characterInfo.textContent = '네트워크 연결이 끊어졌습니다. 인터넷 연결을 확인하고 다시 시도하세요.';
     } else {
-        characterInfo.textContent = '서버에서 데이터를 가져오는 중 오류가 발생했습니다. 잠시 후 다시 시도하세요.';
+        characterInfo.textContent = '서버에서 데이터를 가져오는 중 오류가 발생했습니다. 잠시 후 다시 시도하세요.';    // 구체적인 오류 메시지 표시
     }
-    // 구체적인 오류 메시지 표시
-}      
-    */
+}    */
 });
 
 function displayCharacterInfo(characterData, searchedCharacterName) {
@@ -125,14 +117,12 @@ function displayCharacterInfo(characterData, searchedCharacterName) {
 function displayCharacterImage(imageUrl) {
     const characterImage = document.createElement('img');
     characterImage.src = imageUrl;
-
     characterImageContainer.innerHTML = '';
     characterImageContainer.appendChild(characterImage);  // 순서상 캐릭터 이미지가 위쪽에 배치되어야 하는데 가장 하단에 표시됨(수정해야 할 것) 캐릭터 이미지는 정상적으로 나옴
 }
 
 function displayEquipmentInfo(equipmentData) {
     const equipmentTable = document.createElement('table');
-    
     const tableHeader = `
         <tr>
             <th>종류</th>
@@ -167,7 +157,6 @@ function displaySkillsInfo(skillsData) {
         </tr>
     `;
     skillsTable.innerHTML = tableHeader;
-
     skillsData.forEach(skill => {
         const row = document.createElement('tr');
         const tripods = skill.Tripods.map(tripod => `<li>${tripod.Name}: ${tripod.Tooltip}</li>`).join('');
@@ -229,7 +218,6 @@ function displayArmoryCardInfo(cardsData) {
         const cardGrade = document.createElement('p');
         cardGrade.textContent = `등급: ${card.Grade}`;
         
-
         cardInfo.appendChild(cardName);
         cardInfo.appendChild(cardGrade);
         cardElement.appendChild(cardImage);
@@ -249,10 +237,8 @@ function displayArmoryGemInfo(armoryGemData) {
 
     for (let i = 0; i < armoryGemData.length; i += 2) {
         const row = armoryGemTable.insertRow();
-
         for (let j = i; j < i + 2 && j < armoryGemData.length; j++) {
             const gem = armoryGemData[j];
-
             const cell1 = row.insertCell();
             const gemImage = document.createElement('img');
             gemImage.src = gem.Icon;
@@ -263,7 +249,6 @@ function displayArmoryGemInfo(armoryGemData) {
             cell2.textContent = gem.Level;
         }
     }
-
     characterInfo.appendChild(armoryGemTable);
 }
 
@@ -274,7 +259,6 @@ function displayCollectibles(collectiblesData) {
 
     const collectiblesTable = document.createElement('table');
     collectiblesTable.classList.add('collectibles-table'); 
-
     let row;
     for (let i = 0; i < collectiblesData.length; i++) {
         if (i % 3 === 0) {
@@ -297,6 +281,5 @@ function displayCollectibles(collectiblesData) {
         pointText.textContent = `Point: ${collectible.Point} / ${collectible.MaxPoint}`;
         cell.appendChild(pointText);
     }
-
     characterInfo.appendChild(collectiblesTable);
 }
