@@ -53,8 +53,9 @@ searchForm.addEventListener('submit', async (event) => {
             displaySkillsInfo(armoryData.ArmorySkills);
         }   // 스킬 정보 표시
         if (armoryData.ArmoryGem && armoryData.ArmoryGem.Gems.length > 0) {
-            displayArmoryGemInfo(armoryData.ArmoryGem.Gems);   // 보석 정보 표시
-        }   else {
+            displayArmoryGemInfo(armoryData.ArmoryGem.Gems);   
+        }   // 보석 정보 표시
+         else {
             console.log('No ArmoryGem data found.');
         }
     } catch (error) {
